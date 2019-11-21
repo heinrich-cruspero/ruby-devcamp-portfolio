@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  resources :portfolios
-  get 'pages/home'
-  get 'pages/about'
-  get 'pages/contact'
+  # customize resources
+  resources :portfolios, except: [:show]
+  get 'portfolio/:id', to: 'portfolios#show', as: 'show_portfolio'
+
   resources :blogs
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  # Static Page == get `/url/` to views (app#suffix)
+  get 'about', to: 'pages#about'
+  get 'contact', to: 'pages#contact'
+
+  # configure to homepage
+  root to: 'pages#home'
 end

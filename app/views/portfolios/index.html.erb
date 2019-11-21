@@ -1,8 +1,12 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Portfolio Home</h1>
 
 <% @portfolio_items.each do |portfolio| %>
-    <p><%= portfolio.title %></p>
+    <h2><a href="<%= show_portfolio_path(portfolio.id)%>" ><%= portfolio.title %></a></h2>
     <p><%= portfolio.subtitle %></p>
     <p><%= portfolio.body %></p>
     <%= image_tag portfolio.thumb_image if portfolio.thumb_image %>
+    <a href="<%= edit_portfolio_path(portfolio.id) %>">EDIT</a>
+    <%= link_to 'Destroy', portfolio_path(portfolio.id), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
