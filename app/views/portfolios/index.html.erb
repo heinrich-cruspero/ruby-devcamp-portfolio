@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Portfolio Home</h1>
+<%= link_to 'New Portfolio', new_portfolio_path %>
 
 <% @portfolio_items.each do |portfolio| %>
     <h2><a href="<%= show_portfolio_path(portfolio.id)%>" ><%= portfolio.title %></a></h2>
