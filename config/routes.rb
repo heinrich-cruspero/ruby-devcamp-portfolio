@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # :variable means `url` also means symbolvariable while variable: means dict
   # customize resources
   resources :portfolios, except: [:show]
