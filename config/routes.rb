@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   # :variable means `url` also means symbolvariable while variable: means dict
   # customize resources
   resources :portfolios, except: [:show]
