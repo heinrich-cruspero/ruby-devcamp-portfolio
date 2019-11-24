@@ -6,11 +6,13 @@ class Portfolio < ApplicationRecord
   includes Placeholder
   validates_presence_of :title, :body, :main_image, :thumb_image
 
+  # - add manager like in python. 2 ways on how to do it
   def self.angular
     where(subtitle: 'Angular')
   end
 
   scope :ruby_on_rails_portofolio_items, -> { where(subtitle: 'Ruby on Rails') }
+  # -
 
   # second way of setting defaults
   after_initialize :set_defaults

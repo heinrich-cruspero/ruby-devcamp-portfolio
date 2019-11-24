@@ -1,5 +1,6 @@
 # UpperCamelCase. Capital are mapped with filename '_'
 module DeviseWhitelist
+  # if concern need to extend activesupport concern
   extend ActiveSupport::Concern
 
   included do
