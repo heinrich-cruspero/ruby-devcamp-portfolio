@@ -14,7 +14,7 @@ class Portfolio < ApplicationRecord
   scope :ruby_on_rails_portofolio_items, -> { where(subtitle: 'Ruby on Rails') }
   # -
 
-  # second way of setting defaults
+  # second way of setting defaults for a model
   after_initialize :set_defaults
 
   def set_defaults
