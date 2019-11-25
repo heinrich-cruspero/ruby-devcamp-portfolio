@@ -1,4 +1,8 @@
 <h1>Portfolio Home</h1>
 <%= link_to 'New Portfolio', new_portfolio_path %>
 
-<%= render partial: 'portfolio_item', collection: @portfolio_items %>
+<%=
+  render partial: 'portfolio_item',
+  collection: @portfolio_items,
+  spacer_template: 'portfolio_item_ruler'
+%>
