@@ -1,11 +1,4 @@
 <h1>Portfolio Home</h1>
 <%= link_to 'New Portfolio', new_portfolio_path %>
 
-<% @portfolio_items.each do |portfolio| %>
-    <h2><a href="<%= show_portfolio_path(portfolio.id)%>" ><%= portfolio.title %></a></h2>
-    <p><%= portfolio.subtitle %></p>
-    <p><%= portfolio.body %></p>
-    <%= image_tag portfolio.thumb_image if portfolio.thumb_image %>
-    <a href="<%= edit_portfolio_path(portfolio.id) %>">EDIT</a>
-    <%= link_to 'Destroy', portfolio_path(portfolio.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+<%= render partial: 'portfolio_item', collection: @portfolio_items %>
